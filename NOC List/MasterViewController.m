@@ -153,8 +153,8 @@
     // 15. The cell needs to show both the cover name and the real name of the agent. Since we are using one of the built-in
     //     cell types, the "cell" object above has properties for these two labels already. How do we assign those?
     //
-    cell.textLabel.text = anAgent.realName;
-    cell.detailTextLabel.text = anAgent.coverName;
+    cell.textLabel.text = anAgent.coverName;
+    cell.detailTextLabel.text = anAgent.realName;
     
     //
     // 16. This method is supposed to give a cell back to its caller. How do we do that? Why is this method currently
