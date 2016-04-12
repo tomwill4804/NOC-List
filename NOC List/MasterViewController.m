@@ -59,12 +59,7 @@
     //    Use the "agents" array from above as the array to iterate over. Create an NSDictionary object on the left side
     //    of the for-in loop. You will use this inside the for loop to create an Agent object.
     for (NSDictionary * fileAgent in agents) {
-        
-        Agent *newAgent = [[Agent alloc] init];
-        newAgent.coverName = fileAgent[@"coverName"];
-        newAgent.realName = fileAgent[@"realName"];
-        newAgent.accessLevel = [fileAgent[@"accessLevel"] intValue];
-        [self.agents addObject:newAgent];
+        [self.agents addObject:[Agent agentWithDictionary:fileAgent]];
     }
     
     //
