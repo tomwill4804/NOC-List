@@ -72,7 +72,7 @@
         //     The level label will be a little trickier, because the level property is an NSInteger. We also want that label
         //     to read "Level #". How do we do that?
         //
-        self.accessLevelLabel.text = [NSString stringWithFormat:@"%ld", (long)self.agent.accessLevel];
+        self.accessLevelLabel.text = [NSString stringWithFormat:@"Agent # %ld", (long)self.agent.accessLevel];
 
         
         
