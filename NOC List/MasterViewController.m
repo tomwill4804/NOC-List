@@ -40,7 +40,7 @@
     //
     // 5. Call the method loadNocList so the tableview will actually have objects to load into its cells.
     //
-    self.loadNocList;
+    [self loadNocList];
     
     
 }
@@ -63,7 +63,7 @@
         Agent *newAgent = [[Agent alloc] init];
         newAgent.coverName = fileAgent[@"coverName"];
         newAgent.realName = fileAgent[@"realName"];
-        newAgent.accessLevel = (NSInteger)fileAgent[@"accessLevel"];
+        newAgent.accessLevel = [fileAgent[@"accessLevel"] intValue];
         [self.agents addObject:newAgent];
     }
     

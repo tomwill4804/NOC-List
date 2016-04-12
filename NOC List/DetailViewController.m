@@ -15,6 +15,8 @@
 //     object. How do we do that?
 //
 @property (weak, nonatomic) IBOutlet UILabel *coverNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *realNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *accessLevelLabel;
 
 //
 // 18. We need properties for the other two labels here so we can reference them in code.
@@ -52,7 +54,7 @@
         //
         //     (hint: We did something similar to this in HW 1)
         //
-        
+        self.title = [[self.agent.coverName componentsSeparatedByString:@" "] lastObject];
         
         
         //
@@ -65,9 +67,12 @@
         //
         // 21. We need to set the three labels in our view to the agent's cover name, real name, and access label.
         //
+        self.coverNameLabel.text = self.agent.coverName;
+        self.realNameLabel.text = self.agent.realName;
         //     The level label will be a little trickier, because the level property is an NSInteger. We also want that label
         //     to read "Level #". How do we do that?
         //
+        self.accessLevelLabel.text = [NSString stringWithFormat:@"%ld", (long)self.agent.accessLevel];
 
         
         
@@ -84,6 +89,7 @@
     // 22. We need to make sure to call the configureView method so the detail view will be populated with the agent's data.
     //     How do we do that?
     //
+    [self configureView];
     
     
 }
