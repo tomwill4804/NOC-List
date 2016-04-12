@@ -31,8 +31,6 @@
     //
     // 3. Set the title of the view to "NOC List"
     //
-    self.title = @"NOC List";
-    
     
     //
     // 4. Initialize the agents array as an NSMutableArray
@@ -72,6 +70,7 @@
     //
     // 7. Now that we have agent objects, call a method to instruct the table to reload its data.
     //
+    [self.tableView reloadData];
     
     
 }
