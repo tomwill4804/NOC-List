@@ -88,18 +88,19 @@
     //
     // 8. We need to set the segue identifier to the same one we used in the segue on the storyboard
     //
-    if ([[segue identifier] isEqualToString:@""])
+    if ([[segue identifier] isEqualToString:@"agentDetail"])
     {
         //
         // 9. We need to get an NSIndexPath for the selected cell
         //
-        NSIndexPath *indexPath = nil;
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         
         //
         // 10. Now we're going to use the "row" property of the indexPath from above to pull out the associated Agent object
         //     from the agents array.
         //
-        Agent *selectedAgent = self.agents[0];
+ 
+        Agent *selectedAgent = self.agents[indexPath.row];
         
         //
         // 11. Now we need to send this Agent object to the detail view controller so it know's which agent's info to show.
@@ -107,8 +108,10 @@
         //
         //     How would we go about setting this agent object?
         //
+        DetailViewController *detailViewController = segue.destinationViewController;
+        detailViewController.agent = selectedAgent;
         
-//        [segue destinationViewController];
+        
     }
 }
 
