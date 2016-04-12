@@ -139,13 +139,9 @@
     //
     //     The method call below will perform this dequeuing operation. What should we set as the identifier?
     //
-    static NSString *CellIdentifier = @"simple";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-    }
-
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AgentCell"];
+    
     //
     // 14. We need to get a handle to the appropriate Agent object. How do we do that? (hint: we've done this already ^)
     //
@@ -156,6 +152,7 @@
     //     cell types, the "cell" object above has properties for these two labels already. How do we assign those?
     //
     cell.textLabel.text = anAgent.realName;
+    cell.detailTextLabel.text = anAgent.coverName;
     
     //
     // 16. This method is supposed to give a cell back to its caller. How do we do that? Why is this method currently
